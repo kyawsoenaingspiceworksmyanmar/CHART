@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Create Chart</title>
+	<style>
+		.chart{
+			width: 800px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="chart">
+		<canvas id="myChart">
+		
+		</canvas>
+	</div>
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+	<script>
+		const chart = document.getElementById('myChart');
+
+
+		const data01 ={
+			labels: ['Yangon', 'Mandalay', 'NayPyiTaw', 'Mawlamyine', 'Bago', 'Pathein'],
+			datasets: [
+				{	label: 'Myanmar',
+					data: [4477638,  1208099 , 925000,438861 , 244376,  237089,],
+					backgroundColor:['red','green','blue','yellow','pink','lime']
+				}
+			]
+		}
+		const config01 = {
+			type: 'polarArea',
+			data: data01,
+			options: {
+				plugins:{
+					title:{
+						display: true,
+						text: 'Population in Myanmar',
+						color: 'red',
+					},
+					tooltip:{
+						enabled: true,
+					},
+					legend:{
+						display: true,
+						position: 'right',
+					},
+				}
+			}
+		}
+
+		const chart01 = new Chart(chart,config01);
+
+	</script>
+</body>
+</html>
